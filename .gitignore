@@ -1,0 +1,7 @@
+raw/
+__pycache__/
+*.pyc
+build/
+*.ankiaddon
+work/
+tools/common_words.json
