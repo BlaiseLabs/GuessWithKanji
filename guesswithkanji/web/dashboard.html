@@ -50,7 +50,7 @@ function render(){
   const t=D.totals,g=D.guessable,e=D.effect;
   let h='<h1>GuessWithKanji</h1><div class="sub">'+esc(D.settings.search)+' · planned '+esc(D.at||'')+(D.seconds!=null?' in '+D.seconds+' s':'')+(D.moved!=null?' · '+D.moved+' cards moved':'')+'</div>';
   for(const w of D.warnings||[])h+='<div class="panel warn" style="margin-top:10px">Deck options: '+esc(w)+' (set new card gather order to "Deck" or "Ascending position", and sort order to "Order gathered" or "Card type, then order gathered")</div>';
-  if(D.note)h+='<div class="panel sub" style="margin-top:10px">'+esc(D.note)+'</div>';
+  if(D.note)h+='<div class="panel sub" style="margin-top:10px">'+esc(D.note).replace('ollama.com','<a href="https://ollama.com">ollama.com</a>')+'</div>';
   h+='<div class="tiles">'+
    '<div class="tile"><div class="k">Guessable on arrival, next '+e.n+' new cards</div><div class="v">'+e.before+' <span class="arrow">→</span> '+e.after+' <small>deck order → path</small></div></div>'+
    '<div class="tile"><div class="k">New words judged guessable (reading and meaning)</div><div class="v">'+g.both+' <small>of '+g.new_kanji+' with kanji · '+pct(g.both,g.new_kanji)+'</small></div></div>'+
